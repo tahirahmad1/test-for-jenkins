@@ -8,7 +8,9 @@ timestamps {
                 sh "docker build . -t my-http-server:stable"
             }
             stage("Run Docker image") {
-                sh "docker run -d -p 8081:8081 my-http-server:stable"
+                sh "docker stop frankfurt || true"
+                
+                sh "docker run -d -p 8081:8081 -name frankfurt my-http-server:stable"
             }
             currentBuild.result = 'SUCCESS'
         } catch(ex) {
