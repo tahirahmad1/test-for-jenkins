@@ -4,10 +4,10 @@ timestamps {
             stage("Checkout code") {
                 checkout scm
             }
-           # stage("Build Docker image") {
+            stage("Build Docker image") {
                # sh "docker build . -t my-http-server:stable"
             }
-           # stage("Run Docker image") {
+            stage("Run Docker image") {
             #    sh "docker stop frankfurt || true"
                 
              #   sh "docker rm frankfurt || true"
